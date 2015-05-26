@@ -50,8 +50,12 @@ RUN /script/install_cmake31.sh
 ADD install_gmock170.sh /script/
 RUN /script/install_gmock170.sh
 
+ADD install_xercesc280.sh /script/
+RUN /script/install_xercesc280.sh
+
 # Add root files
 ADD .bashrc /root/.bashrc
+ADD legacy_mode.sh /root/
 
 # Set environment variables
 ENV HOME /root
