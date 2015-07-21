@@ -31,9 +31,9 @@ ADD install_devtoolset2.sh /script/
 RUN /script/install_devtoolset2.sh
 ENV PATH /opt/rh/devtoolset-2/root/usr/bin/:$PATH
 
-ADD install_boost157.sh /script/
-RUN /script/install_boost157.sh
-ENV BOOST_ROOT /usr/local/boost157
+ADD install_boost158.sh /script/
+RUN /script/install_boost158.sh
+ENV BOOST_ROOT /usr/local/boost158
 
 ADD install_python27.sh /script/
 RUN /script/install_python27.sh
@@ -47,8 +47,8 @@ RUN /script/install_cpptools.sh
 ADD install_cryptopp.sh /script/
 RUN /script/install_cryptopp.sh
 
-ADD install_cmake31.sh /script/
-RUN /script/install_cmake31.sh
+ADD install_cmake32.sh /script/
+RUN /script/install_cmake32.sh
 
 ADD install_gmock170.sh /script/
 RUN /script/install_gmock170.sh
