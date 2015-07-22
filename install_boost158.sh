@@ -5,7 +5,7 @@ wget http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.g
 tar xzf boost_1_58_0.tar.gz
 cd boost_1_58_0
 ./bootstrap.sh
-./b2 address-model=32 --prefix=/usr/local/boost158 --without-python -j4 install
-./b2 address-model=32 boost.locale.icu=off --with-locale --prefix=/usr/local/boost158 -j4 install
+./b2 address-model=32 --prefix=/usr/local/boost158 --without-python install
+./b2 address-model=32 boost.locale.icu=off --with-locale --prefix=/usr/local/boost158 install
 cd ~
 rm -rf boost_1_58_0*
