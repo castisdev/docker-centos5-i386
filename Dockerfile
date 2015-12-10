@@ -25,7 +25,9 @@ RUN yum install -y \
   glibc-devel \
   e2fsprogs-devel \
   gdb \
-  valgrind; \
+  valgrind \
+  mysql-devel \
+  postgresql93-devel; \
   yum -y clean all
 
 ADD install_xercesc280.sh /script/
