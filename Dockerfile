@@ -21,6 +21,7 @@ RUN yum install -y \
   git \
   cppcheck \
   subversion \
+  tar \
   boost-devel \
   glibc-devel \
   e2fsprogs-devel \
@@ -33,28 +34,28 @@ RUN yum install -y \
 ADD install_xercesc280.sh /script/
 RUN /script/install_xercesc280.sh
 
-ADD install_cmake32.sh /script/
-RUN /script/install_cmake32.sh
+ADD install_cmake351.sh /script/
+RUN /script/install_cmake351.sh
 
 ADD install_devtoolset2.sh /script/
 RUN /script/install_devtoolset2.sh
 ENV PATH /opt/rh/devtoolset-2/root/usr/bin/:$PATH
 
-ADD install_boost158.sh /script/
-RUN /script/install_boost158.sh
-ENV BOOST_ROOT /usr/local/boost158
+ADD install_boost159.sh /script/
+RUN /script/install_boost159.sh
+ENV BOOST_ROOT /usr/local/boost159
 
-ADD install_cryptopp.sh /script/
-RUN /script/install_cryptopp.sh
+ADD install_cryptopp563.sh /script/
+RUN /script/install_cryptopp563.sh
 
-ADD install_gmock170.sh /script/
-RUN /script/install_gmock170.sh
+ADD ./install_googletest170.sh /script/
+RUN /script/install_googletest170.sh
 
-ADD install_python27.sh /script/
-RUN /script/install_python27.sh
+ADD install_python2711.sh /script/
+RUN /script/install_python2711.sh
 
-ADD install_python34.sh /script/
-RUN /script/install_python34.sh
+ADD install_python351.sh /script/
+RUN /script/install_python351.sh
 
 ADD install_cpptools.sh /script/
 RUN /script/install_cpptools.sh
@@ -68,4 +69,3 @@ ENV HOME /root
 
 # Define default command
 CMD ["bash"]
-
