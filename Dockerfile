@@ -41,9 +41,9 @@ ADD install_devtoolset2.sh /script/
 RUN /script/install_devtoolset2.sh
 ENV PATH /opt/rh/devtoolset-2/root/usr/bin/:$PATH
 
-ADD install_boost159.sh /script/
-RUN /script/install_boost159.sh
-ENV BOOST_ROOT /usr/local/boost159
+ADD install_boost158.sh /script/
+RUN /script/install_boost158.sh
+ENV BOOST_ROOT /usr/local/boost158
 
 ADD install_cryptopp563.sh /script/
 RUN /script/install_cryptopp563.sh
