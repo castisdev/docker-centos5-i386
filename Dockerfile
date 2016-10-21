@@ -64,6 +64,11 @@ RUN /script/install_cpptools.sh
 ADD .bashrc /root/.bashrc
 ADD legacy_mode.sh /root/
 
+# Install
+RUN yum install -y \
+  vim-enhanced; \
+  yum -y clean all
+
 # Set environment variables
 ENV HOME /root
 
