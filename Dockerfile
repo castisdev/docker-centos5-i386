@@ -19,7 +19,6 @@ RUN yum install -y \
   openssl \
   openssl-devel \
   git \
-  cppcheck \
   subversion \
   tar \
   boost-devel \
@@ -59,6 +58,9 @@ RUN /script/install_python351.sh
 
 ADD install_cpptools.sh /script/
 RUN /script/install_cpptools.sh
+
+ADD install_cppcheck1761.sh /script/
+RUN /script/install_cppcheck1761.sh
 
 # Add root files
 ADD .bashrc /root/.bashrc
