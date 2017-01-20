@@ -1,6 +1,6 @@
 #!/bin/bash -e
 cd ~
-wget http://www.cryptopp.com/cryptopp563.zip
+wget --no-check-certificate http://www.cryptopp.com/cryptopp563.zip
 unzip cryptopp563.zip -d cryptopp
 cd cryptopp
 sed -e s/march=native/march=i686/g GNUmakefile > tmp_make
