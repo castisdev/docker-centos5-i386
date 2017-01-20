@@ -5,7 +5,7 @@ wget --no-check-certificate http://sourceforge.net/projects/boost/files/boost/1.
 tar xzf boost_1_58_0.tar.gz
 cd boost_1_58_0
 ./bootstrap.sh
-./b2 --prefix=/usr/local/boost158 --without-python install
-./b2 boost.locale.icu=off --with-locale --prefix=/usr/local/boost158 install
+./b2 --prefix=/usr/local/boost158 --without-python variant=debug install
+./b2 boost.locale.icu=off --with-locale --prefix=/usr/local/boost158 variant=debug install
 cd ~
 rm -rf boost_*
