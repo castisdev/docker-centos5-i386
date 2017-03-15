@@ -68,6 +68,9 @@ RUN /script/install_cppcheck177.sh
 ADD install_zsh531.sh /script/
 RUN /script/install_zsh531.sh
 
+ADD install_ninja172.sh /script/
+RUN /script/install_ninja172.sh
+
 # Add root files
 ADD .bashrc /root/.bashrc
 ADD legacy_mode.sh /root/
