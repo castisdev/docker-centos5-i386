@@ -1,5 +1,9 @@
 #!/bin/bash -e
 cd ~
-curl -L https://github.com/ninja-build/ninja/releases/download/v1.7.2/ninja-linux.zip > ninja-linux.zip
-unzip ninja-linux.zip -d /usr/local/bin/
+wget --no-check-certificate --content-disposition https://github.com/ninja-build/ninja/archive/v1.7.2.tar.gz
+tar xvf ninja-1.7.2.tar.gz
+cd ninja-1.7.2
+python3 ./bootstrap.py
+install ninja /usr/local/bin/
+cd ~
 rm -rf ninja-*
