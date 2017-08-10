@@ -2,36 +2,51 @@
 # https://hub.docker.com/r/alanfranz/centos5-i386/
 FROM alanfranz/centos5-i386
 
+RUN sed -i 's/#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever/baseurl=http:\/\/vault.centos.org\/5.11/g' /etc/yum.repos.d/*
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/*
+
 # Install EPEL repo
-RUN rpm -ivh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+RUN yum install -y epel-release; yum -y clean all
 
 RUN sed -i 's/\$arch/i686/g' /etc/yum.repos.d/*
 RUN sed -i 's/\$basearch/i386/g' /etc/yum.repos.d/*
 
 # Install
-RUN yum install -y \
-  sudo \
-  wget \
-  gcc \
-  gcc-c++ \
-  make \
-  unzip \
-  openssl \
-  openssl-devel \
-  git \
-  subversion \
-  tar \
-  boost-devel \
-  glibc-devel \
-  e2fsprogs-devel \
-  gdb \
-  valgrind \
-  mysql-devel \
-  postgresql93-devel \
-  curl-devel \
-  xz \
-  file; \
-  yum -y clean all
+RUN yum makecache
+RUN yum install -y sudo
+RUN yum install -y wget
+RUN yum install -y gcc
+RUN yum install -y gcc-c++
+RUN yum install -y make
+RUN yum install -y unzip
+RUN yum install -y openssl-devel
+RUN yum install -y git
+RUN yum install -y subversion
+RUN yum install -y tar
+RUN yum install -y boost-devel
+RUN yum install -y glibc-devel
+RUN yum install -y e2fsprogs-devel
+RUN yum install -y gdb
+RUN yum install -y valgrind
+RUN yum install -y mysql-devel
+RUN yum install -y postgresql93-devel
+RUN yum install -y curl-devel
+RUN yum install -y xz
+RUN yum install -y file
+RUN yum install -y vim-enhanced
+RUN yum install -y unixODBC-devel
+
+RUN yum install -y bzip2-devel
+RUN yum install -y ncurses-devel
+RUN yum install -y zlib-devel
+RUN yum install -y sqlite-devel
+RUN yum install -y readline-devel
+RUN yum install -y tk-devel
+RUN yum install -y gdbm-devel
+RUN yum install -y db4-devel
+RUN yum install -y libpcap-devel xz-devel
+
+RUN yum -y clean all
 
 ADD install_xercesc280.sh /script/
 RUN /script/install_xercesc280.sh
@@ -74,11 +89,6 @@ RUN /script/install_ninja172.sh
 # Add root files
 ADD .bashrc /root/.bashrc
 ADD legacy_mode.sh /root/
-
-# Install
-RUN yum install -y \
-  vim-enhanced; \
-  yum -y clean all
 
 # Set environment variables
 ENV HOME /root
