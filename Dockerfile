@@ -88,6 +88,12 @@ RUN /script/install_zsh531.sh
 ADD install_ninja172.sh /script/
 RUN /script/install_ninja172.sh
 
+# set timezone
+RUN ln -snf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+# ctail
+RUN wget -O - https://raw.githubusercontent.com/castisdev/ctail/master/install.sh --no-check-certificate | bash
+
 # Add root files
 ADD .bashrc /root/.bashrc
 ADD legacy_mode.sh /root/
