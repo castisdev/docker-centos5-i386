@@ -37,6 +37,7 @@ RUN yum install -y vim-enhanced
 RUN yum install -y unixODBC-devel
 RUN yum install -y mysql-connector-odbc
 RUN yum install -y sysstat
+RUN yum install -y yum-utils
 
 RUN yum install -y bzip2-devel
 RUN yum install -y ncurses-devel
