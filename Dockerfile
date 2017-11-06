@@ -74,6 +74,11 @@ RUN /script/install_googletest170.sh
 ADD install_python2713.sh /script/
 RUN /script/install_python2713.sh
 
+ADD get-pip.py /scripts/
+RUN python2.7 /scripts/get-pip.py
+RUN rm -rf /scripts/get-pip.py
+RUN pip2.7 install -U pip setuptools
+
 ADD install_python351.sh /script/
 RUN /script/install_python351.sh
 

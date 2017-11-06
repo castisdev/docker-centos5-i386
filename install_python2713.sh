@@ -11,9 +11,3 @@ cd Python-2.7.13
 make altinstall
 cd ~
 rm -rf Python-2.7.13*
-
-wget https://bootstrap.pypa.io/get-pip.py --no-check-certificate
-python2.7 get-pip.py
-rm -rf get-pip.py
-
-pip2.7 install -U pip setuptools
