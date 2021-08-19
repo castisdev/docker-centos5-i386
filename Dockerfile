@@ -2,6 +2,8 @@
 # https://hub.docker.com/r/alanfranz/centos5-i386/
 FROM alanfranz/centos5-i386
 
+LABEL org.opencontainers.image.source https://github.com/castisdev/docker-centos5-i386
+
 RUN sed -i 's/#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever/baseurl=http:\/\/vault.centos.org\/5.11/g' /etc/yum.repos.d/*
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/*
 
